@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>baidunetdisk</Name>
+  <Repository>johngong/baidunetdisk</Repository>
+  <Registry>https://hub.docker.com/r/johngong/baidunetdisk</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category/>
+  <WebUI>http://[IP]:[PORT:5800]</WebUI>
+  <TemplateURL/>
+  <Icon>https://imgsa.baidu.com/forum/pic/item/b166c31fbe096b63d8757d021b338744ebf8ac10.jpg</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1642319576</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>5800</HostPort>
+        <ContainerPort>5800</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/baidunetdisk</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/Downloads/baidunetdiskdownload</HostDir>
+      <ContainerDir>/config/baidunetdiskdownload</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>1000</Value>
+      <Name>USER_ID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>GROUP_ID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>1600</Value>
+      <Name>DISPLAY_WIDTH</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>900</Value>
+      <Name>DISPLAY_HEIGHT</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Web&#x754C;&#x9762;&#x8BBF;&#x95EE;&#x7AEF;&#x53E3;" Target="5800" Default="" Mode="tcp" Description="&#x5BB9;&#x5668; Port: 5800" Type="Port" Display="always" Required="false" Mask="false">5800</Config>
+  <Config Name="&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4F4D;&#x7F6E;" Target="/config" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/baidunetdisk</Config>
+  <Config Name="baidunetdisk&#x4E0B;&#x8F7D;&#x8DEF;&#x5F84;" Target="/config/baidunetdiskdownload" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /config/baidunetdiskdownload" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/Downloads/baidunetdiskdownload</Config>
+  <Config Name="USER_ID" Target="USER_ID" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: USER_ID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+  <Config Name="GROUP_ID" Target="GROUP_ID" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: GROUP_ID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="&#x663E;&#x793A;&#x5BBD;&#x5EA6;" Target="DISPLAY_WIDTH" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: DISPLAY_WIDTH" Type="Variable" Display="always" Required="false" Mask="false">1600</Config>
+  <Config Name="&#x663E;&#x793A;&#x9AD8;&#x5EA6;" Target="DISPLAY_HEIGHT" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: DISPLAY_HEIGHT" Type="Variable" Display="always" Required="false" Mask="false">900</Config>
+</Container>

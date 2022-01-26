@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>syncthing</Name>
+  <Repository>lscr.io/linuxserver/syncthing</Repository>
+  <Registry>https://github.com/orgs/linuxserver/packages/container/package/syncthing</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/linuxserver/docker-syncthing/issues/new/choose</Support>
+  <Project>https://syncthing.net</Project>
+  <Overview>Syncthing(https://syncthing.net) replaces proprietary sync and cloud services with something open, trustworthy and decentralized. Your data is your data alone and you deserve to choose where it is stored, if it is shared with some third party and how it's transmitted over the Internet.</Overview>
+  <Category/>
+  <WebUI>http://[IP]:[PORT:8384]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/linuxserver/templates/main/unraid/syncthing.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/syncthing-logo.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1642308386</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Syncthing(https://syncthing.net) replaces proprietary sync and cloud services with something open, trustworthy and decentralized. Your data is your data alone and you deserve to choose where it is stored, if it is shared with some third party and how it's transmitted over the Internet.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8384</HostPort>
+        <ContainerPort>8384</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>22000</HostPort>
+        <ContainerPort>22000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>22000</HostPort>
+        <ContainerPort>22000</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>21027</HostPort>
+        <ContainerPort>21027</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/sync/data1/</HostDir>
+      <ContainerDir>/data1</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/sync/data2/</HostDir>
+      <ContainerDir>/data2</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/syncthing</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>1000</Value>
+      <Name>PUID</Name>
+      <Mode>{3}</Mode>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode>{3}</Mode>
+    </Variable>
+    <Variable>
+      <Value>022</Value>
+      <Name>UMASK</Name>
+      <Mode>{3}</Mode>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="WebUI" Target="8384" Default="8384" Mode="tcp" Description="Application WebUI" Type="Port" Display="always" Required="true" Mask="false">8384</Config>
+  <Config Name="Port: 22000" Target="22000" Default="22000" Mode="tcp" Description="Listening port (TCP)" Type="Port" Display="always" Required="true" Mask="false">22000</Config>
+  <Config Name="Port: 22000" Target="22000" Default="22000" Mode="udp" Description="Listening port (UDP)" Type="Port" Display="always" Required="true" Mask="false">22000</Config>
+  <Config Name="Port: 21027" Target="21027" Default="21027" Mode="udp" Description="Protocol discovery" Type="Port" Display="always" Required="true" Mask="false">21027</Config>
+  <Config Name="Path: /data1" Target="/data1" Default="" Mode="rw" Description="Data1" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/sync/data1/</Config>
+  <Config Name="Path: /data2" Target="/data2" Default="" Mode="rw" Description="Data2" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/sync/data2/</Config>
+  <Config Name="Appdata" Target="/config" Default="/mnt/user/appdata/syncthing" Mode="rw" Description="Configuration files." Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/syncthing</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="{3}" Description="Container Variable: PUID" Type="Variable" Display="advanced" Required="true" Mask="false">1000</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="{3}" Description="Container Variable: PGID" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+  <Config Name="UMASK" Target="UMASK" Default="022" Mode="{3}" Description="Container Variable: UMASK" Type="Variable" Display="advanced" Required="false" Mask="false">022</Config>
+</Container>
