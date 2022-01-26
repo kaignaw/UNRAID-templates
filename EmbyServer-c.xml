@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>EmbyServer</Name>
-  <Repository>kaignaw/embyserver-c:latest</Repository>
+  <Repository>kaignaw/embyserver-c:4.6.7.0</Repository>
   <Registry>https://registry.hub.docker.com/r/emby/embyserver/</Registry>
   <Network>host</Network>
   <MyIP/>
